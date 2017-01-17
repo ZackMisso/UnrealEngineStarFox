@@ -84,8 +84,11 @@ void AStarFoxPawn::SetupPlayerInputComponent(class UInputComponent* PlayerInputC
 
 void AStarFoxPawn::ThrustInput(float Val)
 {
+	
 	// Is there no input?
 	bool bHasInput = !FMath::IsNearlyEqual(Val, 0.f);
+
+	//if (bHasInput) UE_LOG(LogTemp, Log, TEXT("WHAT"));
 	// If input is not held down, reduce speed
 	float CurrentAcc = bHasInput ? (Val * Acceleration) : (-0.5f * Acceleration);
 	// Calculate new speed
